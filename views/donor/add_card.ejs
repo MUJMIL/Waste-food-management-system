@@ -1,0 +1,65 @@
+<main>
+	<%- include('../partials/donorSidebar') %>
+	
+	<div id="main-wrapper">
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Add Card</h5>
+		</div>
+		
+		<form action="/donor/addNewCard" method="POST" class="border m-4 my-3 p-4 bg-white rounded-2 shadow">
+		
+         
+			<div class="row">
+				<div class="mb-4 col-sm-6">
+					<label for="quantity" class="form-label">Card Name</label>
+					<input type="text" name="card_Name" class="form-control" id="card_Name"  required>
+					<input type="hidden" name="customer_id" class="form-control" id="customer_id"  value="<%= customerId %>">
+
+				</div>
+				
+				<div class="mb-4 col-sm-6" >
+					<label for="time" class="form-label">card_Number</label>
+					<input type="number" name="card_Number" class="form-date-input" id="card_Number" required readonnly>
+				</div>
+			</div>
+
+            <div class="row">
+				<div class="mb-4 col-sm-6">
+					<label for="quantity" class="form-label">exp_year</label>
+					<input type="number" name="card_ExpYear" class="form-control" id="card_ExpYear"  required>
+				</div>
+				
+				<div class="mb-4 col-sm-6" >
+					<label for="time" class="form-label">exp_month</label>
+					<input type="number" name="card_ExpMonth" class="form-date-input" id="card_ExpMonth" required readonnly>
+				</div>
+			</div>
+
+            <div class="row">
+				<div class="mb-4 col-sm-6">
+					<label for="quantity" class="form-label">card_CVC</label>
+					<input type="text" name="card_CVC" class="form-control" id="card_CVC"  required>
+				</div>
+				
+			
+			</div>
+
+	
+			
+			
+		
+		
+			
+			
+			<button type="submit" class="btn w-75 d-block m-auto mt-4">Submit</button>
+		</form>
+		
+	</div>
+</main>
+
+<script>
+	// const d = new Date();
+	// const dateString = d.getFullYear() + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2) + "T" + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+	// document.getElementById("time").value = dateString;
+</script>

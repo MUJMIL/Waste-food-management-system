@@ -1,0 +1,86 @@
+<main>
+	<%- include('../partials/donorSidebar') %>
+	
+	<div id="main-wrapper">
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Donate Funds</h5>
+		</div>
+		
+			<form action="/donor/create-checkout-session" method="POST" class="border m-4 my-3 p-4 bg-white rounded-2 shadow">
+	
+			
+			<div class="row">
+                <div class="mb-4 col-sm-6" >
+					<label for="time" class="form-label">Name</label>
+                    <input type="text" name="donar_name" class="form-control" id="donar_name"  value="<%= currentUser.firstName %> <%= currentUser.lastName %>" readonly>
+
+				</div>
+				<div class="mb-4 col-sm-6">
+					<label for="quantity" class="form-label">Email id</label>
+					<input type="text" name="donar_email" class="form-control" id="donar_email"  value="<%= currentUser.email %>" readonly>
+
+
+				</div>
+				<div class="mb-4">
+					<span class="d-inline-block me-2">Select Amount for Donation:</span>
+
+				
+
+				
+
+			
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="price_id" id="1rs" value="price_1NHQe8SIGvrmGhPSNykrfhEU"  >
+					<label class="form-check-label" for="price_1NHQe8SIGvrmGhPSNykrfhEU">Rs 1</label>
+				</div>
+
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="price_id" id="1000rs" value="price_1NI2mtSIGvrmGhPSa4AlvutC"  >
+					<label class="form-check-label" for="price_1NI2mtSIGvrmGhPSa4AlvutC">Rs 6</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="price_id" id="100rs" value="price_1NHQfsSIGvrmGhPSGuK7t5tf"  >
+					<label class="form-check-label" for="price_1NHQfsSIGvrmGhPSGuK7t5tf">Rs 100</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="price_id" id="500rs" value="price_1NHQgPSIGvrmGhPSKjc40dqg"  >
+					<label class="form-check-label" for="price_1NHQgPSIGvrmGhPSKjc40dqg">Rs 500</label>
+				</div>
+
+			</div>
+				
+			</div>
+
+	
+			
+			
+	
+			
+			<div class="row">
+		
+				
+				<div class="mb-4 col-sm-4">
+					<label for="phone" class="form-label">Phone No</label>
+					<input type="number" name="donation[phone]" class="form-control" id="phone" placeholder="Enter phone.." value="<%= currentUser.phone %>" required>
+				</div>
+			</div>
+			
+			<div class="mb-4">
+				<label for="msg" class="form-label">Want to write some message?</label>
+				<textarea type="text" name="donation[donorToAdminMsg]" class="form-control" id="msg" placeholder="You can write here some msg.."></textarea>
+			</div>
+			
+			<button type="submit" class="btn w-75 d-block m-auto mt-4">Submit</button>
+		</form>
+		
+	</div>
+</main>
+
+<script>
+	// const d = new Date();
+	// const dateString = d.getFullYear() + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2) + "T" + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+	// document.getElementById("time").value = dateString;
+</script>
+
+

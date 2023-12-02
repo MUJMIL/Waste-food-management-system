@@ -1,0 +1,42 @@
+<main>
+	<%- include('../partials/adminSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">NGO Donation Request</h5>
+		</div>
+		
+		<div class="col col-sm-10 col-12 m-auto my-4" style="max-height: 75%; overflow: auto;">
+			<table class="table table-info table-striped table-hover m-0 bg-white">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">NGO</th>
+						<th scope="col">NGO email</th>
+
+
+						<th scope="col">NGO Request</th>
+						<th scope="col">Request Date</th>
+					
+					</tr>
+				</thead>
+				<tbody>
+					<% for(let i=0; i<ngoRequest.length; i++) { %>
+						<tr>
+							<th scope="row"> <%= i+1 %> </th>
+							<td> <%= ngoRequest[i].firstName %> <%= ngoRequest[i].lastName %> </td>
+							<td> <%= ngoRequest[i].email %> </td>
+
+							<td> <%= ngoRequest[i].message %> </td>
+							<td> <%= ngoRequest[i].added_date %> </td>
+						
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>
+</main>
